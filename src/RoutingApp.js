@@ -3,10 +3,11 @@ import ClientModel from './sik/ClientModel';
 import EntityModel from './sik/EntityModel';
 
 import LandingPage from './sik/landing.page';
+import Index from './containers/App';
 import { AppLayout } from './sik/app.layout';
 import { ProtectedRoute } from './sik//protected.route';
 
-import './App.css';
+import './RoutingApp.css';
 import { Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -16,8 +17,8 @@ function App() {
         <Switch>
           <Route exact path="/Client" component={ClientModel} />
           <Route exact path="/Entity" component={EntityModel} />
-
-          <Route exact path="/" component={LandingPage} />
+          <Route exact path="/LP" component={LandingPage} />
+          <Route exact path="/" component={Index} />
           <ProtectedRoute exact path="/app" component={AppLayout} />
           <Route path="*" component={() => '404 NOT FOUND'} />
         </Switch>
