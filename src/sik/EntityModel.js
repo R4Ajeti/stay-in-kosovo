@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Avatar from './img/avatar.jpg';
 
-class EntityModel extends Component {
+class EntityModel extends React.Component {
   constructor(props) {
     super(props);
     let entityObject1 = {};

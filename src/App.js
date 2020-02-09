@@ -2,7 +2,7 @@ import React from 'react';
 import ClientModel from './sik/ClientModel';
 import EntityModel from './sik/EntityModel';
 
-import { LandingPage } from './sik/landing.page';
+import LandingPage from './sik/landing.page';
 import { AppLayout } from './sik/app.layout';
 import { ProtectedRoute } from './sik//protected.route';
 
