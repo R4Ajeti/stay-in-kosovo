@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ name, email, id, lat, lng }) => {
+const Card = ({ name, email, id, lat, lng, childrenMax, adultMax }) => {
   return (
     <div className="tc grow bg-light-green br3 pa3 ma2 dib bw2 shadow-5">
       <img
@@ -11,6 +11,10 @@ const Card = ({ name, email, id, lat, lng }) => {
       <div>
         <h2>{name}</h2>
         <p>{email}</p>
+      </div>
+      <div>
+        <p>ChildrenMax: {childrenMax} || </p>
+        <p>AdultMax: {adultMax}</p>
       </div>
       <a
         class="no-underline near-white bg-animate bg-near-black hover-bg-gray inline-flex items-center ma2 tc br2 pa2"

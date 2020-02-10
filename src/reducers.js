@@ -1,5 +1,6 @@
 import {
   CHANGE_SEARCHFIELD,
+  CHANGE_SEARCHTYPE,
   REQUEST_HOSTELS_PENDING,
   REQUEST_HOSTELS_SUCCESS,
   REQUEST_HOSTELS_FAILED,
@@ -13,6 +14,8 @@ export const searchHostels = (state = initialStateSearch, action = {}) => {
   switch (action.type) {
     case CHANGE_SEARCHFIELD:
       return Object.assign({}, state, { searchField: action.payload });
+    case CHANGE_SEARCHTYPE:
+      return Object.assign({}, state, { searchType: action.payload });
     default:
       return state;
   }

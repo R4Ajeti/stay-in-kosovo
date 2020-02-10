@@ -13,6 +13,8 @@ const CardList = ({ hostels }) => {
             email={hostels[i].email}
             lat={hostels[i].address.geo.lat}
             lng={hostels[i].address.geo.lng}
+            childrenMax={hostels[i].childrenMax}
+            adultMax={hostels[i].adultMax}
           />
         );
       })}
