@@ -1,6 +1,7 @@
 import React from 'react';
 import ClientModel from './sik/ClientModel';
 import EntityModel from './sik/EntityModel';
+import HomePage from './containers/Mybuss-KS-Clone';
 
 import LandingPage from './sik/landing.page';
 import Index from './containers/App';
@@ -18,7 +19,8 @@ function App() {
           <Route exact path="/Client" component={ClientModel} />
           <Route exact path="/Entity" component={EntityModel} />
           <Route exact path="/LP" component={LandingPage} />
-          <Route exact path="/" component={Index} />
+          <Route exact path="/Search" component={Index} />
+          <Route exact path="/" component={HomePage} />
           <ProtectedRoute exact path="/app" component={AppLayout} />
           <Route path="*" component={() => '404 NOT FOUND'} />
         </Switch>
