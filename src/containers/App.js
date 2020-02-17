@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import queryString from 'query-string';
 import { setSearchField, setSearchType, requestHostels } from '../actions';
 
 import CardList from '../components/CardList';
@@ -8,6 +9,33 @@ import Scroll from '../components/Scroll';
 import ErrorBoundry from '../components/ErrorBoundry';
 
 import './App.css';
+
+// Speed up calls to hasOwnProperty
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+
+function isEmpty(obj) {
+  // null and undefined are "empty"
+  if (obj == null) return true;
+
+  // Assume if it has a length property with a non-zero value
+  // that that property is correct.
+  if (obj.length > 0) return false;
+  if (obj.length === 0) return true;
+
+  // If it isn't an object at this point
+  // it is empty, but it can't be anything *but* empty
+  // Is it empty?  Depends on your application.
+  if (typeof obj !== 'object') return true;
+
+  // Otherwise, does it have any properties of its own?
+  // Note that this doesn't handle
+  // toString and valueOf enumeration bugs in IE < 9
+  for (var key in obj) {
+    if (hasOwnProperty.call(obj, key)) return false;
+  }
+
+  return true;
+}
 
 // parameter state comes from index.js provider store state(rootReducers)
 const mapStateToProps = state => {
@@ -44,6 +72,7 @@ class App extends Component {
       isPending,
     } = this.props;
 
+    const query = queryString.parse(this.props.location.search);
     let filteredHostels = hostels.filter(hostel => {
       return hostel.company.name
         .toLowerCase()
@@ -69,11 +98,36 @@ class App extends Component {
           .includes(searchField.toLowerCase());
       });
     }
+
+    if (!isEmpty(query)) {
+      if (query.name) {
+        filteredHostels = hostels.filter(hostel => {
+          return hostel.company.name
+            .toLowerCase()
+            .includes(query.name.toLowerCase());
+        });
+      }
+      if (query.childs) {
+        filteredHostels = hostels.filter(hostel => {
+          return parseFloat(hostel.childrenMax) >= parseFloat(query.childs);
+        });
+      }
+      if (query.adults) {
+        filteredHostels = hostels.filter(hostel => {
+          return parseFloat(hostel.adultMax) >= parseFloat(query.adults);
+        });
+      }
+    }
+
     return (
       <div className="tc">
         <h1 className="f1">Hostel Finder</h1>
-        <SearchBox searchChange={onSearchChange} placeholder="Search by" />
-        <SearchBox searchChange={onSearchChangeType} placeholder="TYPE" />
+        {isEmpty(query) ? (
+          <div>
+            <SearchBox searchChange={onSearchChange} placeholder="Search by" />
+            <SearchBox searchChange={onSearchChangeType} placeholder="TYPE" />
+          </div>
+        ) : null}
         <Scroll>
           {isPending ? (
             <h1>Loading</h1>

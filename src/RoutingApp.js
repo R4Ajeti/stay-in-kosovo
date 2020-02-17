@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/Client" component={ClientModel} />
           <Route exact path="/Entity" component={EntityModel} />
           <Route exact path="/LP" component={LandingPage} />
-          <Route exact path="/Search" component={Index} />
+          <Route exact path="/search" name="search" component={Index} />
           <Route exact path="/" component={HomePage} />
           <ProtectedRoute exact path="/app" component={AppLayout} />
           <Route path="*" component={() => '404 NOT FOUND'} />
