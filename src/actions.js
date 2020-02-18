@@ -272,8 +272,9 @@ const hostels = [
 
 export const requestHostels = () => dispatch => {
   dispatch({ type: REQUEST_HOSTELS_PENDING });
-  apiCall('https://jsonplaceholder.typicode.com/users')
+  /*apiCall('https://jsonplaceholder.typicode.com/users')
     .then(data => dispatch({ type: REQUEST_HOSTELS_SUCCESS, payload: hostels }))
     //.then(data => dispatch({ type: REQUEST_HOSTELS_SUCCESS, payload: data }))
-    .catch(error => dispatch({ type: REQUEST_HOSTELS_FAILED, payload: error }));
+    .catch(error => dispatch({ type: REQUEST_HOSTELS_FAILED, payload: error }));*/
+  dispatch({ type: REQUEST_HOSTELS_SUCCESS, payload: hostels });
 };
