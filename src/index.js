@@ -1,14 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter, Redirect } from 'react-router-dom';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
+import { createLogger } from 'redux-logger';
+import 'tachyons';
+
+import RoutingApp from './RoutingApp';
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { requestHostels, searchHostels } from './reducers';
+
+import './index.css';
 
 const rootElement = document.getElementById('root');
+
+const logger = createLogger();
+
+const rootReducers = combineReducers({ requestHostels, searchHostels });
+
+const store = createStore(
+  rootReducers,
+  applyMiddleware(thunkMiddleware, logger)
+);
+
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <RoutingApp />
+    </Provider>
   </BrowserRouter>,
   rootElement
 );
