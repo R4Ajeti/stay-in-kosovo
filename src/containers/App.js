@@ -101,19 +101,19 @@ class App extends Component {
 
     if (!isEmpty(query)) {
       if (query.name) {
-        filteredHostels = hostels.filter(hostel => {
+        filteredHostels = filteredHostels.filter(hostel => {
           return hostel.company.name
             .toLowerCase()
             .includes(query.name.toLowerCase());
         });
       }
       if (query.childs) {
-        filteredHostels = hostels.filter(hostel => {
+        filteredHostels = filteredHostels.filter(hostel => {
           return parseFloat(hostel.childrenMax) >= parseFloat(query.childs);
         });
       }
       if (query.adults) {
-        filteredHostels = hostels.filter(hostel => {
+        filteredHostels = filteredHostels.filter(hostel => {
           return parseFloat(hostel.adultMax) >= parseFloat(query.adults);
         });
       }
