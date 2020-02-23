@@ -28,7 +28,7 @@ const hostels = [
     address: {
       street: 'Kulas Light',
       suite: 'Apt. 556',
-      city: 'Gwenborough',
+      city: 'Prishtine',
       zipcode: '92998-3874',
       geo: {
         lat: '-37.3159',
@@ -53,7 +53,7 @@ const hostels = [
     address: {
       street: 'Victor Plains',
       suite: 'Suite 879',
-      city: 'Wisokyburgh',
+      city: 'Prizren',
       zipcode: '90566-7771',
       geo: {
         lat: '-43.9509',
@@ -78,7 +78,7 @@ const hostels = [
     address: {
       street: 'Douglas Extension',
       suite: 'Suite 847',
-      city: 'McKenziehaven',
+      city: 'Prishtine',
       zipcode: '59590-4157',
       geo: {
         lat: '-68.6102',
@@ -103,7 +103,7 @@ const hostels = [
     address: {
       street: 'Hoeger Mall',
       suite: 'Apt. 692',
-      city: 'South Elvis',
+      city: 'Peje',
       zipcode: '53919-4257',
       geo: {
         lat: '29.4572',
@@ -128,7 +128,7 @@ const hostels = [
     address: {
       street: 'Skiles Walks',
       suite: 'Suite 351',
-      city: 'Roscoeview',
+      city: 'Gjakove',
       zipcode: '33263',
       geo: {
         lat: '-31.8129',
@@ -153,7 +153,7 @@ const hostels = [
     address: {
       street: 'Norberto Crossing',
       suite: 'Apt. 950',
-      city: 'South Christy',
+      city: 'Prizren',
       zipcode: '23505-1337',
       geo: {
         lat: '-71.4197',
@@ -178,7 +178,7 @@ const hostels = [
     address: {
       street: 'Rex Trail',
       suite: 'Suite 280',
-      city: 'Howemouth',
+      city: 'Prishtine',
       zipcode: '58804-1099',
       geo: {
         lat: '24.8918',
@@ -203,7 +203,7 @@ const hostels = [
     address: {
       street: 'Ellsworth Summit',
       suite: 'Suite 729',
-      city: 'Aliyaview',
+      city: 'Prishtine',
       zipcode: '45169',
       geo: {
         lat: '-14.3990',
@@ -228,7 +228,7 @@ const hostels = [
     address: {
       street: 'Dayna Park',
       suite: 'Suite 449',
-      city: 'Bartholomebury',
+      city: 'Peje',
       zipcode: '76495-3109',
       geo: {
         lat: '24.6463',
@@ -253,7 +253,7 @@ const hostels = [
     address: {
       street: 'Kattie Turnpike',
       suite: 'Suite 198',
-      city: 'Lebsackbury',
+      city: 'Podujeve',
       zipcode: '31428-2261',
       geo: {
         lat: '-38.2386',

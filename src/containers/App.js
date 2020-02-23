@@ -74,7 +74,7 @@ class App extends Component {
 
     const query = queryString.parse(this.props.location.search);
     let filteredHostels = hostels.filter(hostel => {
-      return hostel.company.name
+      return hostel.address.city
         .toLowerCase()
         .includes(searchField.toLowerCase());
     });
@@ -102,7 +102,7 @@ class App extends Component {
     if (!isEmpty(query)) {
       if (query.name) {
         filteredHostels = filteredHostels.filter(hostel => {
-          return hostel.company.name
+          return hostel.address.city
             .toLowerCase()
             .includes(query.name.toLowerCase());
         });
